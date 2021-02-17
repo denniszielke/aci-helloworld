@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "policy15-03d9"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "policy15-03d9"
+  template:
+    metadata:
+      labels:
+        app: "policy15-03d9"
+    spec:
+      containers:
+        - name: "policy15-03d9"
+          image: "dzbuild.azurecr.io/policy15"
+          ports:
+          - containerPort: 80
